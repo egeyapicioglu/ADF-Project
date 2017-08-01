@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true"
+  ComponentClass="Demo.model.AppModuleImpl"
+  DefClass="Demo.model.AppModuleDefImpl">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_isDefCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="EgeLessonsView1"
+    ViewObjectName="Demo.model.EgeLessonsView"/>
+    <ViewUsage
+    Name="StudentSearchView1"
+    ViewObjectName="Demo.model.StudentSearchView"/>
+  <ViewUsage
+    Name="EgeStudentLessonsView1"
+    ViewObjectName="Demo.model.EgeStudentLessonsView"/>
+  <ViewUsage
+    Name="EgeStudentsView1"
+    ViewObjectName="Demo.model.EgeStudentsView"/>
+  <ViewUsage
+    Name="EgeStudentLessonsView2"
+    ViewObjectName="Demo.model.EgeStudentLessonsView"/>
+  <ViewUsage
+    Name="EgeStudentLessonsView3"
+    ViewObjectName="Demo.model.EgeStudentLessonsView"/>
+  <ViewLinkUsage
+    Name="SysC0027610597Link1"
+    ViewLinkObjectName="Demo.model.SysC0027610597Link"
+    SrcViewUsageName="Demo.model.AppModule.EgeStudentsView1"
+    DstViewUsageName="Demo.model.AppModule.EgeStudentLessonsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="SysC0027610598Link1"
+    ViewLinkObjectName="Demo.model.SysC0027610598Link"
+    SrcViewUsageName="Demo.model.AppModule.EgeLessonsView1"
+    DstViewUsageName="Demo.model.AppModule.EgeStudentLessonsView3"
+    Reversed="false"/>
+</AppModule>

@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="ogrenciAtama.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="100%" id="gr1">
+                    <af:gridCell id="gc2"/>
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                        <af:panelFormLayout id="pfl1">
+                            <af:panelBorderLayout id="pbl1">
+                                <f:facet name="start">
+                                    <af:table value="#{bindings.EgeLessonsView1.collectionModel}" var="row"
+                                              rows="#{bindings.EgeLessonsView1.rangeSize}"
+                                              emptyText="#{bindings.EgeLessonsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0" rowSelection="multiple"
+                                              fetchSize="#{bindings.EgeLessonsView1.rangeSize}" id="t1"
+                                              binding="#{RowSelectionBean.table}" width="214" autoHeightRows="10">
+                                        <af:column headerText="#{bindings.EgeLessonsView1.hints.LessonId.label}" id="c1"
+                                                   width="100">
+                                            <af:outputText value="#{row.LessonId}"
+                                                           shortDesc="#{bindings.EgeLessonsView1.hints.LessonId.tooltip}"
+                                                           id="ot1">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.EgeLessonsView1.hints.LessonId.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.EgeLessonsView1.hints.LessonName.label}"
+                                                   id="c2" width="104">
+                                            <af:outputText value="#{row.LessonName}"
+                                                           shortDesc="#{bindings.EgeLessonsView1.hints.LessonName.tooltip}"
+                                                           id="ot2"/>
+                                        </af:column>
+                                    </af:table>
+                                </f:facet>
+                                <f:facet name="bottom">
+                                    <af:table value="#{bindings.EgeStudentLessonsView1.collectionModel}" var="row"
+                                              rows="#{bindings.EgeStudentLessonsView1.rangeSize}"
+                                              emptyText="#{bindings.EgeStudentLessonsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              fetchSize="#{bindings.EgeStudentLessonsView1.rangeSize}"
+                                              styleClass="AFSStretchWidth" id="t3"
+                                              binding="#{RowSelectionBean.studentLessonTable}" columnStretching="last"
+                                              autoHeightRows="10" width="647">
+                                        <af:column sortProperty="#{bindings.EgeStudentLessonsView1.hints.StudentLessonsId.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.EgeStudentLessonsView1.hints.StudentLessonsId.label}"
+                                                   id="c7" width="145">
+                                            <af:outputText value="#{row.StudentLessonsId}"
+                                                           shortDesc="#{bindings.EgeStudentLessonsView1.hints.StudentLessonsId.tooltip}"
+                                                           id="ot7">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.EgeStudentLessonsView1.hints.StudentLessonsId.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.EgeStudentLessonsView1.hints.StudentId.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.EgeStudentLessonsView1.hints.StudentId.label}"
+                                                   id="c8" width="148">
+                                            <af:outputText value="#{row.StudentId}"
+                                                           shortDesc="#{bindings.EgeStudentLessonsView1.hints.StudentId.tooltip}"
+                                                           id="ot8">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.EgeStudentLessonsView1.hints.StudentId.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.EgeStudentLessonsView1.hints.LessonId.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.EgeStudentLessonsView1.hints.LessonId.label}"
+                                                   id="c9" width="156">
+                                            <af:outputText value="#{row.LessonId}"
+                                                           shortDesc="#{bindings.EgeStudentLessonsView1.hints.LessonId.tooltip}"
+                                                           id="ot9">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.EgeStudentLessonsView1.hints.LessonId.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.EgeStudentLessonsView1.hints.Score.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.EgeStudentLessonsView1.hints.Score.label}"
+                                                   id="c10" width="-36">
+                                            <af:outputText value="#{row.Score}"
+                                                           shortDesc="#{bindings.EgeStudentLessonsView1.hints.Score.tooltip}"
+                                                           id="ot10">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.EgeStudentLessonsView1.hints.Score.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                    </af:table>
+                                </f:facet>
+                                <f:facet name="end">
+                                    <af:table value="#{bindings.EgeStudentsView1.collectionModel}" var="row"
+                                              rows="#{bindings.EgeStudentsView1.rangeSize}"
+                                              emptyText="#{bindings.EgeStudentsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.EgeStudentsView1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.EgeStudentsView1.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.EgeStudentsView1.rangeSize}"
+                                              id="t2" binding="#{RowSelectionBean.studentTable}" autoHeightRows="10"
+                                              width="425">
+                                        <af:column sortProperty="#{bindings.EgeStudentsView1.hints.StudentId.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.EgeStudentsView1.hints.StudentId.label}"
+                                                   id="c3" width="100">
+                                            <af:outputText value="#{row.StudentId}"
+                                                           shortDesc="#{bindings.EgeStudentsView1.hints.StudentId.tooltip}"
+                                                           id="ot3">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.EgeStudentsView1.hints.StudentId.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.EgeStudentsView1.hints.StudentNumber.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.EgeStudentsView1.hints.StudentNumber.label}"
+                                                   id="c4" width="100">
+                                            <af:outputText value="#{row.StudentNumber}"
+                                                           shortDesc="#{bindings.EgeStudentsView1.hints.StudentNumber.tooltip}"
+                                                           id="ot4">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.EgeStudentsView1.hints.StudentNumber.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.EgeStudentsView1.hints.StudentName.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.EgeStudentsView1.hints.StudentName.label}"
+                                                   id="c5" width="100">
+                                            <af:outputText value="#{row.StudentName}"
+                                                           shortDesc="#{bindings.EgeStudentsView1.hints.StudentName.tooltip}"
+                                                           id="ot5"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.EgeStudentsView1.hints.StudentClass.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.EgeStudentsView1.hints.StudentClass.label}"
+                                                   id="c6" width="104">
+                                            <af:outputText value="#{row.StudentClass}"
+                                                           shortDesc="#{bindings.EgeStudentsView1.hints.StudentClass.tooltip}"
+                                                           id="ot6"/>
+                                        </af:column>
+                                    </af:table>
+                                </f:facet>
+                            </af:panelBorderLayout>
+                            <af:button text="Dersleri Ata" id="b2" binding="#{RowSelectionBean.tables}"
+                                       action="#{RowSelectionBean.b2_action}"/>
+                            <af:button text="Back" id="b3" action="back"/>
+                        </af:panelFormLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:RowSelectionBean-->
+</f:view>

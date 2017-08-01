@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="StudentSearchView"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  SelectList="EgeStudents.STUDENT_CLASS, 
+       EgeStudents.STUDENT_ID, 
+       EgeStudents.STUDENT_NAME, 
+       EgeStudents.STUDENT_NUMBER"
+  FromList="EGE_STUDENTS EgeStudents"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="Demo.model.StudentSearchView_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="EgeStudents"
+    Entity="Demo.model.EgeStudents"/>
+  <ViewAttribute
+    Name="StudentClass"
+    PrecisionRule="true"
+    EntityAttrName="StudentClass"
+    EntityUsage="EgeStudents"
+    AliasName="STUDENT_CLASS"/>
+  <ViewAttribute
+    Name="StudentId"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="StudentId"
+    EntityUsage="EgeStudents"
+    AliasName="STUDENT_ID"/>
+  <ViewAttribute
+    Name="StudentName"
+    PrecisionRule="true"
+    EntityAttrName="StudentName"
+    EntityUsage="EgeStudents"
+    AliasName="STUDENT_NAME"/>
+  <ViewAttribute
+    Name="StudentNumber"
+    PrecisionRule="true"
+    EntityAttrName="StudentNumber"
+    EntityUsage="EgeStudents"
+    AliasName="STUDENT_NUMBER"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="Demo.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

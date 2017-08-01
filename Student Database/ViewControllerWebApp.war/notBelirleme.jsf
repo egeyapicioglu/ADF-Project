@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="notBelirleme.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow id="gr2">
+                    <af:gridCell id="gc2">
+                        <af:panelCollection id="pc1">
+                            <f:facet name="menus"/>
+                            <f:facet name="toolbar">
+                                <af:toolbar id="t2">
+                                    <af:button text="Submit" id="b1" action="submit"/>
+                                    <af:button text="Back" id="b2" action="back"/>
+                                </af:toolbar>
+                            </f:facet>
+                            <f:facet name="statusbar"/>
+                            <af:table value="#{bindings.EgeStudentLessonsView1.collectionModel}" var="row"
+                                      rows="#{bindings.EgeStudentLessonsView1.rangeSize}"
+                                      emptyText="#{bindings.EgeStudentLessonsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.EgeStudentLessonsView1.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.EgeStudentLessonsView1.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.EgeStudentLessonsView1.rangeSize}"
+                                      filterModel="#{bindings.EgeStudentLessonsView1Query.queryDescriptor}"
+                                      queryListener="#{bindings.EgeStudentLessonsView1Query.processQuery}"
+                                      filterVisible="true" varStatus="vs" id="t1" editingMode="clickToEdit">
+                                <af:column sortProperty="#{bindings.EgeStudentLessonsView1.hints.StudentLessonsId.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.EgeStudentLessonsView1.hints.StudentLessonsId.label}"
+                                           id="c1">
+                                    <af:outputText value="#{row.StudentLessonsId}"
+                                                   shortDesc="#{bindings.EgeStudentLessonsView1.hints.StudentLessonsId.tooltip}"
+                                                   id="ot1">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.EgeStudentLessonsView1.hints.StudentLessonsId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EgeStudentLessonsView1.hints.StudentId.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.EgeStudentLessonsView1.hints.StudentId.label}"
+                                           id="c2">
+                                    <af:outputText value="#{row.StudentId}"
+                                                   shortDesc="#{bindings.EgeStudentLessonsView1.hints.StudentId.tooltip}"
+                                                   id="ot2">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.EgeStudentLessonsView1.hints.StudentId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EgeStudentLessonsView1.hints.LessonId.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.EgeStudentLessonsView1.hints.LessonId.label}" id="c3">
+                                    <af:outputText value="#{row.LessonId}"
+                                                   shortDesc="#{bindings.EgeStudentLessonsView1.hints.LessonId.tooltip}"
+                                                   id="ot3">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.EgeStudentLessonsView1.hints.LessonId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EgeStudentLessonsView1.hints.Score.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.EgeStudentLessonsView1.hints.Score.label}" id="c4">
+                                    <af:inputText value="#{row.bindings.Score.inputValue}"
+                                                  label="#{bindings.EgeStudentLessonsView1.hints.Score.label}"
+                                                  required="#{bindings.EgeStudentLessonsView1.hints.Score.mandatory}"
+                                                  columns="#{bindings.EgeStudentLessonsView1.hints.Score.displayWidth}"
+                                                  maximumLength="#{bindings.EgeStudentLessonsView1.hints.Score.precision}"
+                                                  shortDesc="#{bindings.EgeStudentLessonsView1.hints.Score.tooltip}"
+                                                  id="it1">
+                                        <f:validator binding="#{row.bindings.Score.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.EgeStudentLessonsView1.hints.Score.format}"/>
+                                    </af:inputText>
+                                </af:column>
+                            </af:table>
+                        </af:panelCollection>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

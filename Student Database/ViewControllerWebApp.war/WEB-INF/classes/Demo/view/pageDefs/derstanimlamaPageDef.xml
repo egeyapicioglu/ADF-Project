@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="derstanimlamaPageDef"
+                Package="Demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EgeLessonsView1" RangeSize="25" DataControl="AppModuleDataControl" id="EgeLessonsView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EgeLessonsView1Iterator" id="LessonName">
+      <AttrNames>
+        <Item Value="LessonName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

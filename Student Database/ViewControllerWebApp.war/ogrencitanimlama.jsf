@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+    <af:document title="ogrencitanimlama.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="100%" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                        <af:outputText value=" Please enter the information of the student to be added, the id will be given by the system."
+                                       id="ot1"/>
+                        <af:panelGroupLayout layout="vertical" id="pgl2">
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText value="#{bindings.StudentNumber.inputValue}"
+                                              label="#{bindings.StudentNumber.hints.label}"
+                                              required="#{bindings.StudentNumber.hints.mandatory}"
+                                              columns="#{bindings.StudentNumber.hints.displayWidth}"
+                                              maximumLength="#{bindings.StudentNumber.hints.precision}"
+                                              shortDesc="#{bindings.StudentNumber.hints.tooltip}" id="it1">
+                                    <f:validator binding="#{bindings.StudentNumber.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.StudentNumber.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.StudentName.inputValue}"
+                                              label="#{bindings.StudentName.hints.label}"
+                                              required="#{bindings.StudentName.hints.mandatory}"
+                                              columns="#{bindings.StudentName.hints.displayWidth}"
+                                              maximumLength="#{bindings.StudentName.hints.precision}"
+                                              shortDesc="#{bindings.StudentName.hints.tooltip}" id="it2">
+                                    <f:validator binding="#{bindings.StudentName.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.StudentClass.inputValue}"
+                                              label="#{bindings.StudentClass.hints.label}"
+                                              required="#{bindings.StudentClass.hints.mandatory}"
+                                              columns="#{bindings.StudentClass.hints.displayWidth}"
+                                              maximumLength="#{bindings.StudentClass.hints.precision}"
+                                              shortDesc="#{bindings.StudentClass.hints.tooltip}" id="it3">
+                                    <f:validator binding="#{bindings.StudentClass.validator}"/>
+                                </af:inputText>
+                                <f:facet name="footer">
+                                    <af:button text="Submit" id="b1" action="submit"/>
+                                    <af:button text="Back" id="b2" action="cancel"/>
+                                </f:facet>
+                            </af:panelFormLayout>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

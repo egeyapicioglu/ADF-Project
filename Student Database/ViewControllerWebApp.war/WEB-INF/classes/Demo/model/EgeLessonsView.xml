@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EgeLessonsView"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  SelectList="EgeLessons.LESSON_ID, 
+       EgeLessons.LESSON_NAME"
+  FromList="EGE_LESSONS EgeLessons"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  RowClass="Demo.model.EgeLessonsViewRowImpl"
+  ComponentClass="Demo.model.EgeLessonsViewImpl"
+  DefClass="Demo.model.EgeLessonsViewDefImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Def|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="EgeLessons"
+    Entity="Demo.model.EgeLessons"/>
+  <ViewAttribute
+    Name="LessonId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LessonId"
+    EntityUsage="EgeLessons"
+    AliasName="LESSON_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="LessonName"
+    PrecisionRule="true"
+    EntityAttrName="LessonName"
+    EntityUsage="EgeLessons"
+    AliasName="LESSON_NAME"/>
+  <ViewLinkAccessor
+    Name="EgeStudentLessonsView"
+    ViewLink="Demo.model.SysC0027610598Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

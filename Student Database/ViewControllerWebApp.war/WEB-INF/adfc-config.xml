@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="untitled2">
+    <page>/untitled2.jsf</page>
+  </view>
+  <view id="ogrencitanimlama">
+    <page>/ogrencitanimlama.jsf</page>
+  </view>
+  <view id="OgrenciArama">
+    <page>/OgrenciArama.jsf</page>
+  </view>
+  <view id="derstanimlama">
+    <page>/derstanimlama.jsf</page>
+  </view>
+  <method-call id="CreateInsert">
+    <method>#{bindings.CreateInsert.execute}</method>
+    <outcome>
+      <fixed-outcome>CreateInsert</fixed-outcome>
+    </outcome>
+  </method-call>
+  <method-call id="Rollback">
+    <method>#{bindings.Rollback.execute}</method>
+    <outcome>
+      <fixed-outcome>Rollback</fixed-outcome>
+    </outcome>
+  </method-call>
+  <method-call id="Commit">
+    <method>#{bindings.Commit.execute}</method>
+    <outcome>
+      <fixed-outcome>Commit</fixed-outcome>
+    </outcome>
+  </method-call>
+  <method-call id="CreateInsert1">
+    <method>#{bindings.CreateInsert.execute}</method>
+    <outcome>
+      <fixed-outcome>CreateInsert</fixed-outcome>
+    </outcome>
+  </method-call>
+  <view id="ogrenciAtama">
+    <page>/ogrenciAtama.jsf</page>
+  </view>
+  <method-call id="CreateInsert2">
+    <method>#{bindings.CreateInsert.execute}</method>
+    <outcome>
+      <fixed-outcome>CreateInsert</fixed-outcome>
+    </outcome>
+  </method-call>
+  <view id="notBelirleme">
+    <page>/notBelirleme.jsf</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>untitled2</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>create</from-outcome>
+      <to-activity-id>CreateInsert</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__5">
+      <from-outcome>ogrenciarama</from-outcome>
+      <to-activity-id>OgrenciArama</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__8">
+      <from-outcome>LessonCreate</from-outcome>
+      <to-activity-id>CreateInsert1</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__6">
+      <from-outcome>ogrenciAtama</from-outcome>
+      <to-activity-id>ogrenciAtama</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__7">
+      <from-outcome>notBelirleme</from-outcome>
+      <to-activity-id>notBelirleme</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__9">
+    <from-activity-id>derstanimlama</from-activity-id>
+    <control-flow-case id="__10">
+      <from-outcome>back</from-outcome>
+      <to-activity-id>Rollback</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__27">
+      <from-outcome>submit</from-outcome>
+      <to-activity-id>Commit</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__12">
+    <from-activity-id>CreateInsert</from-activity-id>
+    <control-flow-case id="__14">
+      <from-outcome>CreateInsert</from-outcome>
+      <to-activity-id>ogrencitanimlama</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__15">
+    <from-activity-id>ogrencitanimlama</from-activity-id>
+    <control-flow-case id="__16">
+      <from-outcome>cancel</from-outcome>
+      <to-activity-id>Rollback</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__19">
+      <from-outcome>submit</from-outcome>
+      <to-activity-id>Commit</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__17">
+    <from-activity-id>Rollback</from-activity-id>
+    <control-flow-case id="__18">
+      <from-outcome>Rollback</from-outcome>
+      <to-activity-id>untitled2</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__20">
+    <from-activity-id>Commit</from-activity-id>
+    <control-flow-case id="__21">
+      <from-outcome>Commit</from-outcome>
+      <to-activity-id>untitled2</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__25">
+    <from-activity-id>CreateInsert1</from-activity-id>
+    <control-flow-case id="__26">
+      <from-outcome>CreateInsert</from-outcome>
+      <to-activity-id>derstanimlama</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__30">
+    <from-activity-id>OgrenciArama</from-activity-id>
+    <control-flow-case id="__31">
+      <from-outcome>back</from-outcome>
+      <to-activity-id>untitled2</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__3">
+    <from-activity-id>ogrenciAtama</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>back</from-outcome>
+      <to-activity-id>Rollback</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__13">
+      <from-outcome>Submit</from-outcome>
+      <to-activity-id>Commit</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__11">
+    <from-activity-id>notBelirleme</from-activity-id>
+    <control-flow-case id="__24">
+      <from-outcome>submit</from-outcome>
+      <to-activity-id>Commit</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__28">
+      <from-outcome>back</from-outcome>
+      <to-activity-id>Rollback</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__22">
+    <managed-bean-name>Selection</managed-bean-name>
+    <managed-bean-class>Demo.view.Selection</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__23">
+    <managed-bean-name>RowSelectionBean</managed-bean-name>
+    <managed-bean-class>Demo.view.RowSelection</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

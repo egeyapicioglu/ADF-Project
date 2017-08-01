@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="ogrencitanimlamaPageDef"
+                Package="Demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EgeStudentsView1" RangeSize="25" DataControl="AppModuleDataControl" id="EgeStudentsView1Iterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EgeStudentsView1Iterator" id="StudentNumber">
+      <AttrNames>
+        <Item Value="StudentNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EgeStudentsView1Iterator" id="StudentName">
+      <AttrNames>
+        <Item Value="StudentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EgeStudentsView1Iterator" id="StudentClass">
+      <AttrNames>
+        <Item Value="StudentClass"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EgeStudentsView1Iterator" id="StudentId">
+      <AttrNames>
+        <Item Value="StudentId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EgeStudentsView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="EgeStudentsView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="EgeStudentsView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="EgeStudentsView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

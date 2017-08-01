@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="Demo.view" ClientType="Generic">
+  <pageMap>
+    <page path="/ogrencitanimlama.jsf" usageId="Demo_view_ogrencitanimlamaPageDef"/>
+    <page path="/untitled2.jsf" usageId="Demo_view_untitled2PageDef"/>
+    <page path="/OgrenciArama.jsf" usageId="Demo_view_OgrenciAramaPageDef"/>
+    <page path="PageFlow#CreateInsert" usageId="Demo_view_adfc_config___CreateInsertPageDef"/>
+    <page path="PageFlow#Rollback" usageId="Demo_view_adfc_config___RollbackPageDef"/>
+    <page path="PageFlow#Commit" usageId="Demo_view_adfc_config___CommitPageDef"/>
+    <page path="PageFlow#CreateInsert1" usageId="Demo_view_adfc_config___CreateInsert1PageDef"/>
+    <page path="/derstanimlama.jsf" usageId="Demo_view_derstanimlamaPageDef"/>
+    <page path="PageFlow#CreateInsert2" usageId="Demo_view_adfc_config___CreateInsert2PageDef"/>
+    <page path="/ogrenciAtama.jsf" usageId="Demo_view_ogrenciAtamaPageDef"/>
+    <page path="/notBelirleme.jsf" usageId="Demo_view_notBelirlemePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="Demo_view_ogrencitanimlamaPageDef" path="Demo.view.pageDefs.ogrencitanimlamaPageDef"/>
+    <page id="Demo_view_untitled2PageDef" path="Demo.view.pageDefs.untitled2PageDef"/>
+    <page id="Demo_view_OgrenciAramaPageDef" path="Demo.view.pageDefs.OgrenciAramaPageDef"/>
+    <page id="Demo_view_adfc_config___CreateInsertPageDef" path="Demo.view.pageDefs.adfc_config___CreateInsertPageDef"/>
+    <page id="Demo_view_adfc_config___RollbackPageDef" path="Demo.view.pageDefs.adfc_config___RollbackPageDef"/>
+    <page id="Demo_view_adfc_config___CommitPageDef" path="Demo.view.pageDefs.adfc_config___CommitPageDef"/>
+    <page id="Demo_view_adfc_config___CreateInsert1PageDef"
+          path="Demo.view.pageDefs.adfc_config___CreateInsert1PageDef"/>
+    <page id="Demo_view_derstanimlamaPageDef" path="Demo.view.pageDefs.derstanimlamaPageDef"/>
+    <page id="Demo_view_adfc_config___CreateInsert2PageDef"
+          path="Demo.view.pageDefs.adfc_config___CreateInsert2PageDef"/>
+    <page id="Demo_view_ogrenciAtamaPageDef" path="Demo.view.pageDefs.ogrenciAtamaPageDef"/>
+    <page id="Demo_view_notBelirlemePageDef" path="Demo.view.pageDefs.notBelirlemePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="Demo.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

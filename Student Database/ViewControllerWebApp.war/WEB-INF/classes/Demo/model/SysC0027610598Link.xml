@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysC0027610598Link"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  EntityAssociation="Demo.model.SysC0027610598Assoc">
+  <ViewLinkDefEnd
+    Name="EgeLessonsView"
+    Cardinality="1"
+    Source="true"
+    Owner="Demo.model.EgeLessonsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EgeLessonsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="Demo.model.EgeLessonsView.LessonId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EgeStudentLessonsView"
+    Cardinality="-1"
+    Owner="Demo.model.EgeStudentLessonsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EgeStudentLessonsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="Demo.model.EgeStudentLessonsView.LessonId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

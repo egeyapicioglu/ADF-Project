@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="notBelirlemePageDef"
+                Package="Demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EgeStudentLessonsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="EgeStudentLessonsView1Iterator"/>
+    <searchRegion Binds="EgeStudentLessonsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EgeStudentLessonsView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EgeStudentLessonsView1Iterator" id="EgeStudentLessonsView1">
+      <nodeDefinition DefName="Demo.model.EgeStudentLessonsView" Name="EgeStudentLessonsView10">
+        <AttrNames>
+          <Item Value="StudentLessonsId"/>
+          <Item Value="StudentId"/>
+          <Item Value="LessonId"/>
+          <Item Value="Score"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

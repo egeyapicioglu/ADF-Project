@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68"
+                id="adfc_config___CreateInsert2PageDef" Package="Demo.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="EgeStudentLessonsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="EgeStudentLessonsView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="EgeStudentLessonsView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="OgrenciArama.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="100%" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                        <af:panelGroupLayout layout="vertical" id="pgl2">
+                            <af:panelGroupLayout layout="vertical" id="pgl3">
+                                <af:panelHeader text="EgeStudents" id="ph1">
+                                    <af:panelGroupLayout layout="vertical" id="pgl4">
+                                        <af:panelHeader text="EgeStudents" id="ph2">
+                                            <af:query id="qryId1" headerText="Search" disclosed="true"
+                                                      value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                                                      model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                                      queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                                      queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                                                      resultComponentId="::resId1"/>
+                                        </af:panelHeader>
+                                        <af:table value="#{bindings.StudentSearchView1.collectionModel}" var="row"
+                                                  rows="#{bindings.StudentSearchView1.rangeSize}"
+                                                  emptyText="#{bindings.StudentSearchView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.StudentSearchView1.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.StudentSearchView1.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.StudentSearchView1.rangeSize}" id="resId1">
+                                            <af:column headerText="#{bindings.StudentSearchView1.hints.StudentClass.label}"
+                                                       id="resId1c1">
+                                                <af:outputText value="#{row.StudentClass}"
+                                                               shortDesc="#{bindings.StudentSearchView1.hints.StudentClass.tooltip}"
+                                                               id="ot1"/>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.StudentSearchView1.hints.StudentId.label}"
+                                                       id="resId1c2">
+                                                <af:outputText value="#{row.StudentId}"
+                                                               shortDesc="#{bindings.StudentSearchView1.hints.StudentId.tooltip}"
+                                                               id="ot2">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.StudentSearchView1.hints.StudentId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.StudentSearchView1.hints.StudentName.label}"
+                                                       id="resId1c3">
+                                                <af:outputText value="#{row.StudentName}"
+                                                               shortDesc="#{bindings.StudentSearchView1.hints.StudentName.tooltip}"
+                                                               id="ot3"/>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.StudentSearchView1.hints.StudentNumber.label}"
+                                                       id="resId1c4">
+                                                <af:outputText value="#{row.StudentNumber}"
+                                                               shortDesc="#{bindings.StudentSearchView1.hints.StudentNumber.tooltip}"
+                                                               id="ot4">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.StudentSearchView1.hints.StudentNumber.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelGroupLayout>
+                                </af:panelHeader>
+                            </af:panelGroupLayout>
+                            <af:button text="Back" id="b1" action="back"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="OgrenciAramaPageDef"
+                Package="Demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="StudentSearchView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="StudentSearchView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="StudentSearchView1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="StudentSearchView1Iterator" id="StudentSearchView1">
+      <nodeDefinition DefName="Demo.model.StudentSearchView" Name="StudentSearchView10">
+        <AttrNames>
+          <Item Value="StudentClass"/>
+          <Item Value="StudentId"/>
+          <Item Value="StudentName"/>
+          <Item Value="StudentNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="derstanimlama.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow height="100%" id="gr1">
+          <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+            <!-- Content -->
+            <af:panelFormLayout id="pfl1">
+              <af:outputText value="Please enter a Lesson Name to create a new lesson, the Id will be given by the system " id="ot1"/>
+              <af:panelFormLayout id="pfl2" inlineStyle="width:326px; height:95px;">
+                <af:inputText value="#{bindings.LessonName.inputValue}" label="#{bindings.LessonName.hints.label}"
+                              required="#{bindings.LessonName.hints.mandatory}"
+                              columns="#{bindings.LessonName.hints.displayWidth}"
+                              maximumLength="#{bindings.LessonName.hints.precision}"
+                              shortDesc="#{bindings.LessonName.hints.tooltip}" id="it1">
+                  <f:validator binding="#{bindings.LessonName.validator}"/>
+                </af:inputText>
+                <f:facet name="footer">
+                  <af:button text="Submit" id="b1" action="submit"/>
+                  <af:button text="Back" id="b2" action="back"/>
+                </f:facet>
+              </af:panelFormLayout>
+            </af:panelFormLayout>
+          </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:form>
+  </af:document>
+</f:view>

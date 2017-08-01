@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EgeLessons"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="EGE_LESSONS"
+  AliasName="EgeLessons"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="LessonId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LESSON_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="EGE_LESSONS"
+    PrimaryKey="true"
+    IsUpdateable="while_insert">
+    <TransientExpression><![CDATA[(new oracle.jbo.server.SequenceImpl("SEQUENCE_LESSON_ID", adf.object.getDBTransaction())).getSequenceNumber()]]></TransientExpression>
+  </Attribute>
+  <Attribute
+    Name="LessonName"
+    Precision="64"
+    ColumnName="LESSON_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EGE_LESSONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="64"/>
+    </DesignTime>
+  </Attribute>
+    
+  <Key
+    Name="EgeLessonsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EGE_LESSONS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="Demo.model.EgeLessons.LessonId"/>
+    </AttrArray>
+  </Key>
+</Entity>

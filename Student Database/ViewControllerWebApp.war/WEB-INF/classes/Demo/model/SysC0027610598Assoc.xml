@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysC0027610598Assoc"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="EgeLessons"
+    Cardinality="1"
+    Source="true"
+    Owner="Demo.model.EgeLessons">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="EgeLessons"/>
+      <Attr Name="_foreignKey" Value="Demo.model.EgeLessons.EgeLessonsPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="Demo.model.EgeLessons.LessonId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="EgeStudentLessons"
+    Cardinality="-1"
+    Owner="Demo.model.EgeStudentLessons">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="EgeStudentLessons"/>
+      <Attr Name="_foreignKey" Value="Demo.model.EgeStudentLessons.SysC0027610598"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="Demo.model.EgeStudentLessons.LessonId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
